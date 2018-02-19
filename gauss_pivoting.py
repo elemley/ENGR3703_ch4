@@ -28,14 +28,14 @@ def backsub(ab, order):
     x = np.empty(shape=(n,1)) #make an x vector to hold the solution
     x[n-1]=ab[order[n-1],n]/ab[order[n-1],n-1]    #find the solution for the last row before starting our loops
     for i in range(n-2,-1,-1):      #this starts at the next to last row and proceeds upward in the matrix
-        sum = get_sum(ab,x,order[i])       #use our function get_sum to calculate the summation in the equation for this alg.
+        sum = get_sum(ab,x,order,i)       #use our function get_sum to calculate the summation in the equation for this alg.
         x[i]=(ab[order[i],n]-sum)/ab[order[i],i]  #calc. x-value for the ith row
     return x
 
-def get_sum(ab,x,i):
+def get_sum(ab,x,order,i):
     summ = 0.0  #initialize our summation
     for j in range(i+1,n):          #start at column i+1 (just right of the diagonal / stop at n-1
-        summ = summ + ab[i,j]*x[j]  #see algorithm in notes
+        summ = summ + ab[order[i],j]*x[j]  #see algorithm in notes
     return summ
 
 def forward_elim(ab):
