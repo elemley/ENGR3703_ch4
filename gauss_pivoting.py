@@ -77,9 +77,11 @@ def forward_elim(ab):
 #make an array
 
 #this is an example from class
-a_lst = [[0.143, 0.357,2.01], [-1.31, 0.911, 1.99],[11.2, -4.30, -0.605]]   #this is a list of lists
+#a_lst = [[0.143, 0.357,2.01], [-1.31, 0.911, 1.99],[11.2, -4.30, -0.605]]   #this is a list of lists
+a_lst = [[0.0, 5.0,-1.0], [-4.0, 2.0, 3.0],[4.0, 3.0, 3.0]]   #this is a list of lists
 a = np.array(a_lst) #this makes a_lst an 2D array
-b_lst = [-5.173, -5.458,4.415]
+#b_lst = [-5.173, -5.458,4.415]
+b_lst = [-5.0, -17.0,7.0]
 b= np.array(b_lst)
 
 #print a,b
